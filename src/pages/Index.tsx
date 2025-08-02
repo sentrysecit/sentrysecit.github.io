@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Shield, BookOpen, Calendar, Users, ExternalLink, Github, Twitter, Facebook, ArrowRight, Zap, Briefcase, Code } from 'lucide-react';
+import { Shield, BookOpen, Calendar, Users, ExternalLink, Github, Twitter, Facebook, ArrowRight, Zap, Briefcase, Code, Youtube, Instagram, Linkedin, Music, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,23 +10,23 @@ const Index = () => {
 
   const upcomingTalks = [
     {
-      title: "Fundamentos de Buffer Overflow",
-      date: "15 Enero 2025",
-      speaker: "Alex Chen",
+      title: "Fundamentos de Docker",
+      date: "02 Agosto 2025",
+      speaker: "@KrozFu",
       description: "Aprende técnicas de explotación de memoria y control de flujo de ejecución.",
       level: "Intermedio"
     },
     {
       title: "Estrategias para CTF",
-      date: "22 Enero 2025",
-      speaker: "Maria Rodriguez",
+      date: "09 Agosto 2025",
+      speaker: "SentrySec",
       description: "Metodologías para dominar desafíos de ciberseguridad en competiciones.",
-      level: "Avanzado"
+      level: "Intermedio"
     },
     {
       title: "Arsenal de Seguridad Web",
-      date: "29 Enero 2025",
-      speaker: "Sam Patel",
+      date: "16 Agosto 2025",
+      speaker: "SentrySec",
       description: "Explora el OWASP Top 10 y técnicas modernas de pentesting web.",
       level: "Principiante"
     }
@@ -64,9 +64,37 @@ const Index = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, url: '#', followers: '2.5K' },
-    { name: 'Twitter', icon: Twitter, url: '#', followers: '1.8K' },
-    { name: 'GitHub', icon: Github, url: '#', followers: '3.2K' }
+    // { name: 'Facebook', icon: Facebook, url: '#', followers: '2.5K' },
+    {
+      name: 'LinkedIn',
+      icon: Linkedin,
+      url: 'https://www.linkedin.com/company/sentrysecit'
+    },
+    {
+      name: 'GitHub',
+      icon: Github,
+      url: 'https://github.com/sentrysecit'
+    },
+    {
+      name: 'YouTube',
+      icon: Youtube,
+      url: 'https://www.youtube.com/@sentrysec'
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      url: 'https://www.instagram.com/sentrysec.it/'
+    },
+    {
+      name: 'Discord',
+      icon: Bot,
+      url: 'https://discord.gg/TyAQFcUe'
+    }
+    // {
+    //   name: 'TikTok',
+    //   icon: Music,
+    //   url: 'https://tiktok.com/@tuusuario'
+    // }
   ];
 
   const navItems = [
@@ -98,7 +126,7 @@ const Index = () => {
             </a>
           </Button>
           <Button size="lg" variant="secondary" asChild>
-            <a href="#community" onClick={() => setActiveTab('community')}>
+            <a href="https://discord.gg/TyAQFcUe" onClick={() => setActiveTab('community')}>
               Únete a la Comunidad
             </a>
           </Button>
@@ -108,24 +136,25 @@ const Index = () => {
       {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* WriteUps Card - Large */}
+        {/* Upcoming Talks Card - Large */}
         <Card className="md:col-span-2 row-span-2 p-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-secondary/50 dark:bg-secondary/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-2xl">
-              <BookOpen className="h-6 w-6 text-accent" />
-              WriteUps Recientes
+              <Calendar className="h-6 w-6 text-accent" />
+              Próximas Charlas
             </CardTitle>
             <CardDescription>
-              Análisis técnicos de nuestros miembros.
+              Sesiones de entrenamiento dirigidas por expertos en ciberseguridad.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {writeUps.slice(0, 3).map((writeup, index) => (
+            {upcomingTalks.slice(0, 3).map((talk, index) => (
               <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-background">
                 <div>
-                  <h4 className="font-semibold text-foreground">{writeup.title}</h4>
-                  <p className="text-sm text-muted-foreground">{writeup.category} • {writeup.readTime}</p>
+                  <h4 className="font-semibold text-foreground">{talk.title}</h4>
+                  <p className="text-sm text-muted-foreground">{talk.date} • por {talk.speaker}</p>
                 </div>
-                <Badge variant="outline" className="border-primary/50 text-primary">{writeup.difficulty}</Badge>
+                <Badge variant="outline" className="border-primary/50 text-primary">{talk.level}</Badge>
               </div>
             ))}
           </CardContent>
@@ -141,15 +170,15 @@ const Index = () => {
           </CardHeader>
           <CardContent className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary">1.2K+</div>
+              <div className="text-3xl font-bold text-primary">65+</div>
               <div className="text-sm text-muted-foreground">Miembros</div>
             </div>
-            <div>
+            {/* <div>
               <div className="text-3xl font-bold text-primary">47</div>
               <div className="text-sm text-muted-foreground">WriteUps</div>
-            </div>
+            </div> */}
             <div>
-              <div className="text-3xl font-bold text-primary">12</div>
+              <div className="text-3xl font-bold text-primary">5</div>
               <div className="text-sm text-muted-foreground">Charlas</div>
             </div>
           </CardContent>
@@ -165,7 +194,7 @@ const Index = () => {
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground mb-4">
-              Conecta con otros profesionales y entusiastas.
+              Seguinos en nuestras redes sociales.
             </p>
             <div className="flex justify-around">
               {socialLinks.map((social) => (
