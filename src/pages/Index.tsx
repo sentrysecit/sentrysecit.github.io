@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Shield, BookOpen, Calendar, Users, ExternalLink, Github, Twitter, Facebook, ArrowRight, Zap, Briefcase, Code, Youtube, Instagram, Linkedin, Music, Bot } from 'lucide-react';
+import { Shield, BookOpen, Calendar, Users, ExternalLink, Github, Twitter, Facebook, ArrowRight, Zap, Briefcase, Code, Youtube, Instagram, Linkedin, Music, Bot, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -71,6 +71,11 @@ const Index = () => {
       url: 'https://www.linkedin.com/company/sentrysecit'
     },
     {
+      name: 'Whatsapp',
+      icon: Phone,
+      url: ' https://chat.whatsapp.com/BKotNlKhZGpAUT2ne7jaq9'
+    },
+    {
       name: 'GitHub',
       icon: Github,
       url: 'https://github.com/sentrysecit'
@@ -99,9 +104,9 @@ const Index = () => {
 
   const navItems = [
     { id: 'home', label: 'Inicio', icon: Shield },
+    { id: 'community', label: 'Comunidad', icon: Users },
     { id: 'writeups', label: 'WriteUps', icon: BookOpen },
-    { id: 'talks', label: 'Charlas', icon: Calendar },
-    { id: 'community', label: 'Comunidad', icon: Users }
+    { id: 'talks', label: 'Charlas', icon: Calendar }
   ];
 
   const renderHome = () => (
@@ -126,7 +131,7 @@ const Index = () => {
             </a>
           </Button>
           <Button size="lg" variant="secondary" asChild>
-            <a href="https://discord.gg/TyAQFcUe" onClick={() => setActiveTab('community')}>
+            <a href="https://www.linkedin.com/company/sentrysecit" onClick={() => setActiveTab('community')}>
               Únete a la Comunidad
             </a>
           </Button>
@@ -170,7 +175,7 @@ const Index = () => {
           </CardHeader>
           <CardContent className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary">65+</div>
+              <div className="text-3xl font-bold text-primary">90+</div>
               <div className="text-sm text-muted-foreground">Miembros</div>
             </div>
             {/* <div>
