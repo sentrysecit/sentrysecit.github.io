@@ -1,5 +1,5 @@
 import { useWriteUps } from '@/modules/writeups/hooks/useWriteUps';
-import { WriteupList } from './writeup-list';
+import { WriteupList } from '@/modules/writeups/components/writeup-list';
 import { Spinner } from '@/modules/core/components/ui/spinner';
 
 export default function WriteupPage() {

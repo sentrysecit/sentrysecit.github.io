@@ -4,11 +4,13 @@ import { TooltipProvider } from '@/modules/core/components/ui/tooltip';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@/modules/core/components/theme-provider';
-import Index from './pages/Index';
 import NotFound from './pages/NotFound';
 import WriteUpDetailPage from './pages/writeups/writeup-detail-page';
 import WriteupPage from './pages/writeups/writeup-page';
 import { MainLayout } from './layouts/main-layout';
+import HomePage from './pages/home-page';
+import CommunityPage from './pages/community-page';
+import TalksPage from './pages/talks-page';
 
 const queryClient = new QueryClient();
 
@@ -25,9 +27,11 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route element={<MainLayout />}>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<HomePage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="/writeups" element={<WriteupPage />} />
+              <Route path="/comunidad" element={<CommunityPage />} />
+              <Route path="/charlas" element={<TalksPage />} />
               <Route path="/writeups/:slug" element={<WriteUpDetailPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
