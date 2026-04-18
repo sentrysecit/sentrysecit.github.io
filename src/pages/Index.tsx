@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Shield, BookOpen, Calendar, Users, ExternalLink, Github, Twitter, Facebook, ArrowRight, Zap, Briefcase, Code, Youtube, Instagram, Linkedin, Music, Bot, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ThemeSwitcher } from '@/components/theme-switcher';
+import { Button } from '@/modules/core/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/modules/core/components/ui/card';
+import { Badge } from '@/modules/core/components/ui/badge';
+import { ThemeSwitcher } from '@/modules/core/components/theme-switcher';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -39,27 +39,6 @@ const Index = () => {
       difficulty: "Fácil",
       description: "Un walkthrough completo de la explotación SMB con herramientas modernas.",
       readTime: "12 min"
-    },
-    {
-      title: "Control de EIP en Buffer Overflows",
-      category: "Exploit Dev",
-      difficulty: "Medio",
-      description: "Una guía para controlar el flujo de ejecución en overflows basados en stack.",
-      readTime: "25 min"
-    },
-    {
-      title: "Soluciones a Retos Web de PicoCTF 2024",
-      category: "CTF",
-      difficulty: "Variado",
-      description: "Soluciones y metodologías para los desafíos web más comunes.",
-      readTime: "18 min"
-    },
-    {
-      title: "Infiltración en Active Directory",
-      category: "Red Team",
-      difficulty: "Difícil",
-      description: "Técnicas de reconocimiento y escalada de privilegios en entornos AD.",
-      readTime: "35 min"
     }
   ];
 
@@ -340,8 +319,8 @@ const Index = () => {
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'writeups':
-        return renderWriteUps();
+      // case 'writeups':
+      //   return renderWriteUps();
       case 'talks':
         return renderTalks();
       case 'community':
