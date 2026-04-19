@@ -28,13 +28,13 @@ const App = () => (
           <Routes>
             <Route element={<MainLayout />}>
               <Route path="/" element={<HomePage />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="/writeups" element={<WriteupPage />} />
               <Route path="/comunidad" element={<CommunityPage />} />
               <Route path="/charlas" element={<TalksPage />} />
               <Route path="/writeups/:slug" element={<WriteUpDetailPage />} />
-              <Route path="*" element={<NotFound />} />
             </Route>
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
