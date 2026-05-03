@@ -1,11 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { ThemeSwitcher } from '@/modules/core/components/theme-switcher';
-import { Shield, BookOpen, Calendar, Users } from 'lucide-react';
+import { Shield, BookOpen, Calendar, Users, FileText } from 'lucide-react';
 
 const navItems = [
   { path: '/', label: 'Inicio', icon: Shield },
   { path: '/comunidad', label: 'Comunidad', icon: Users },
   { path: '/writeups', label: 'WriteUps', icon: BookOpen },
+  { path: '/blog', label: 'Blog', icon: FileText },
   { path: '/charlas', label: 'Charlas', icon: Calendar },
 ];
 

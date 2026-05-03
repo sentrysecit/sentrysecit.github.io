@@ -47,45 +47,7 @@ export default function HomePage() {
       </div>
 
       {/* Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* WriteUps Card - Large */}
-        {/* Upcoming Talks Card - Large */}
-        <Card className="md:col-span-2 row-span-2 p-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-secondary/50 dark:bg-secondary/20">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-2xl">
-              <Calendar className="h-6 w-6 text-accent" />
-              Próximas Charlas
-            </CardTitle>
-            <CardDescription>
-              Sesiones de entrenamiento dirigidas por expertos en
-              ciberseguridad.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {upcomingTalks.slice(0, 3).map((talk, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-background"
-              >
-                <div>
-                  <h4 className="font-semibold text-foreground">
-                    {talk.title}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {talk.date} • por {talk.speaker}
-                  </p>
-                </div>
-                <Badge
-                  variant="outline"
-                  className="border-primary/50 text-primary"
-                >
-                  {talk.level}
-                </Badge>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {/* Stats Card */}
         <Card className="p-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-secondary/50 dark:bg-secondary/20">
           <CardHeader>
@@ -96,15 +58,11 @@ export default function HomePage() {
           </CardHeader>
           <CardContent className="grid grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary">90+</div>
+              <div className="text-3xl font-bold text-primary">120+</div>
               <div className="text-sm text-muted-foreground">Miembros</div>
             </div>
-            {/* <div>
-              <div className="text-3xl font-bold text-primary">47</div>
-              <div className="text-sm text-muted-foreground">WriteUps</div>
-            </div> */}
             <div>
-              <div className="text-3xl font-bold text-primary">5</div>
+              <div className="text-3xl font-bold text-primary">7</div>
               <div className="text-sm text-muted-foreground">Charlas</div>
             </div>
           </CardContent>
@@ -132,7 +90,6 @@ export default function HomePage() {
                   className="text-center text-muted-foreground hover:text-primary transition-colors"
                 >
                   <social.icon className="h-6 w-6 mx-auto" />
-                  {/* <span className="text-xs mt-1">{social.followers}</span> */}
                 </a>
               ))}
             </div>

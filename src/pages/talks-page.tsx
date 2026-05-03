@@ -17,42 +17,21 @@ export default function TalksPage() {
           Próximas Charlas
         </h2>
         <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-          Sesiones de entrenamiento dirigidas por expertos en ciberseguridad.
+          Estamos preparando nuevas sesiones de entrenamiento dirigidas por expertos en ciberseguridad.
         </p>
       </div>
 
-      <div className="space-y-6">
-        {upcomingTalks.map((talk, index) => (
-          <Card
-            key={index}
-            className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col md:flex-row bg-secondary/50 dark:bg-secondary/20"
-          >
-            <CardHeader className="flex-shrink-0 md:w-1/4 md:border-r md:dark:border-slate-800 p-6 text-center md:text-left">
-              <p className="text-lg font-semibold text-accent">{talk.date}</p>
-              <p className="text-sm text-muted-foreground">
-                por {talk.speaker}
-              </p>
-              <Badge
-                variant="outline"
-                className="mt-2 border-primary/50 text-primary"
-              >
-                {talk.level}
-              </Badge>
-            </CardHeader>
-            <div className="flex-grow p-6 flex flex-col">
-              <CardTitle>{talk.title}</CardTitle>
-              <CardDescription className="mt-2 flex-grow">
-                {talk.description}
-              </CardDescription>
-              <div className="mt-4">
-                <Button>
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Reservar Lugar
-                </Button>
-              </div>
-            </div>
-          </Card>
-        ))}
+      <div className="flex flex-col items-center justify-center py-20 text-center space-y-4">
+        <div className="relative">
+          <Calendar className="h-12 w-12 text-muted-foreground animate-pulse" />
+          <div className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full animate-ping" />
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold">Próximamente</h3>
+          <p className="text-muted-foreground max-w-sm">
+            Esta sección se actualizará automáticamente una vez que la API de eventos esté desplegada.
+          </p>
+        </div>
       </div>
     </div>
   );

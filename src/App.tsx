@@ -11,6 +11,8 @@ import { MainLayout } from './layouts/main-layout';
 import HomePage from './pages/home-page';
 import CommunityPage from './pages/community-page';
 import TalksPage from './pages/talks-page';
+import BlogPage from './pages/blog/blog-page';
+import BlogDetailPage from './pages/blog/blog-detail-page';
 
 const queryClient = new QueryClient();
 
@@ -28,7 +30,10 @@ const App = () => (
           <Routes>
             <Route element={<MainLayout />}>
               <Route path="/" element={<HomePage />} />
+<Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogDetailPage />} />
               <Route path="/writeups" element={<WriteupPage />} />
+
               <Route path="/comunidad" element={<CommunityPage />} />
               <Route path="/charlas" element={<TalksPage />} />
               <Route path="/writeups/:slug" element={<WriteUpDetailPage />} />

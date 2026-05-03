@@ -36,6 +36,6 @@ export const socialLinks = [
   {
     name: 'Discord',
     icon: Bot,
-    url: 'https://discord.gg/TyAQFcUe',
+    url: 'https://discord.com/invite/Xmawyh2EDJ',
   },
 ];
