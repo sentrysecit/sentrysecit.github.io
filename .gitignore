@@ -25,3 +25,7 @@ dist-ssr
 
 GEMINI.md
 prompt.md
+
+# Agents
+.agents/
+skills-lock.json
