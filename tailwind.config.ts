@@ -20,9 +20,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'cinzel': ['Cinzel', 'serif'],
+				'display': ['Kode Mono', 'ui-monospace', 'monospace'],
+				'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
-				'mono': ['JetBrains Mono', 'monospace'],
+				'mono': ['Kode Mono', 'ui-monospace', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

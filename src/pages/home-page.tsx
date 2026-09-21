@@ -22,7 +22,7 @@ export default function HomePage() {
           alt="SentrySec Logo"
           className="w-24 h-24 mx-auto mb-6"
         />
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-foreground">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-foreground">
           SentrySec
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
