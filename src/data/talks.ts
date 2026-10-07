@@ -1,5 +1,15 @@
 export const upcomingTalks = [
   {
+    title: 'De Cero a Hallazgos: Cómo pensar como un Bug Hunter',
+    date: '14 Octubre 2026',
+    time: '5:00 PM',
+    location: 'Universidad de Caldas',
+    speaker: 'Santiago Duque Martínez',
+    description:
+      'Una introducción al mindset del bug hunting: metodología, enumeración y cómo convertir un objetivo desconocido en hallazgos impactantes.',
+    level: 'Principiante',
+  },
+  {
     title: 'Fundamentos de Docker',
     date: '02 Agosto 2025',
     speaker: '@KrozFu',
