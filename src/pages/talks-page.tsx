@@ -1,8 +1,9 @@
-import { Calendar } from 'lucide-react';
-import { Button } from '@/modules/core/components/ui/button';
+import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 import {
   Card,
+  CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/modules/core/components/ui/card';
@@ -21,17 +22,48 @@ export default function TalksPage() {
         </p>
       </div>
 
-      <div className="flex flex-col items-center justify-center py-20 text-center space-y-4">
-        <div className="relative">
-          <Calendar className="h-12 w-12 text-muted-foreground animate-pulse" />
-          <div className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full animate-ping" />
-        </div>
-        <div className="space-y-2">
-          <h3 className="text-xl font-semibold">Próximamente</h3>
-          <p className="text-muted-foreground max-w-sm">
-            Esta sección se actualizará automáticamente una vez que la API de eventos esté desplegada.
-          </p>
-        </div>
+      <div className="grid gap-6 md:grid-cols-2">
+        {upcomingTalks.map(talk => (
+          <Card
+            key={talk.title}
+            className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-secondary/50 dark:bg-secondary/20"
+          >
+            <CardHeader>
+              <Badge
+                variant="outline"
+                className="border-accent/50 text-accent w-fit mb-2"
+              >
+                {talk.level}
+              </Badge>
+              <CardTitle>{talk.title}</CardTitle>
+              <CardDescription>{talk.description}</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-accent" />
+                <span>{talk.date}</span>
+                {talk.time && (
+                  <>
+                    <Clock className="h-4 w-4 text-accent ml-2" />
+                    <span>{talk.time}</span>
+                  </>
+                )}
+              </div>
+              {talk.location && (
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-accent" />
+                  <span>{talk.location}</span>
+                </div>
+              )}
+            </CardContent>
+            <CardFooter className="flex justify-between items-center text-sm text-muted-foreground">
+              <span className="flex items-center gap-2">
+                <Users className="h-4 w-4 text-accent" />
+                {talk.speaker}
+              </span>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   );
